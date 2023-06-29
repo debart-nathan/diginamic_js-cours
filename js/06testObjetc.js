@@ -64,7 +64,7 @@ console.log(`os de c2`, c2.os);
 // c'est une syntaxe alternative jugée plus clair
 // qui est plus proche des syntaxe trouvé dans d'autre languages
 // ce code est donc équivalent au code précédent.
-class Computer {
+class Computer3 {
     constructor(brand, model, weight) {
 
         this.brand = brand;
@@ -87,10 +87,10 @@ class Computer {
 //toutes les propriété d'une class dans une autre
 
 //il peut être utilisé pour créer des alias
-class Co extends Computer {}
+class Co extends Computer3 {}
 
 //Ou pour étendre les fonctionnalité d'un classe
-class Laptop extends Computer{
+class Laptop extends Computer3{
 
     //on peu modifier le constructeur
     constructor(brand, model, weight, autonomy){
@@ -125,6 +125,7 @@ l.askRepair2();
 
 
 class Circle{
+    #radius
     constructor(radius, name) {
         
         this.#radius=radius;
@@ -136,13 +137,13 @@ class Circle{
     //est utiliser pour récupéré la valeur de radius d'une certaine manière
     get radius(){
         console.log(`dans le getter de radius`);
-        return this.radius
+        return this.#radius
     }
 
     //est utiliser pour assigné une valeur à une propriété d'une certaine manière
     set radius(nRadius){
         console.log(`dans le setter de radius`);
-        this.radius = nRadius
+        this.#radius = nRadius
     }
 
     area(){
