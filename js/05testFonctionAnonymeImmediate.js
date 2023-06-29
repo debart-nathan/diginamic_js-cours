@@ -15,13 +15,13 @@
 /**
  * WARNING :
  */
-// test serras assigné le retour de la fonction
+// test serras assigné le retour de la fonction et non pas une référence a la fonction.
 const test =(function (){
     var i = 3;
 })();
 
 
-// test2 pouras accéder a i par un system de closure
+// test2 pourras accéder a i par un system de closure
 const test2 =(function (){
     var i = 3;
     function getI(){
