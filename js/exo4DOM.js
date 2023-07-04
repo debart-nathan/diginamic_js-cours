@@ -28,14 +28,15 @@ form.addEventListener("submit", (event) => {
 function validateFunction(event, action) {
     const text = !action ? "validate" : "invalidate";
     const task = event.target.parentElement
-    const invalidate = document.createElement("button");
-    invalidate.textContent = text;
-    invalidate.addEventListener("click", (event) => { validateFunction(event, !action); })
-    task.replaceChild(invalidate, event.target);
+    const newButton = document.createElement("button");
+    newButton.textContent = text;
+    newButton.addEventListener("click", (event) => { validateFunction(event, !action); })
+    task.replaceChild(newButton, event.target); // remplace le bouton qui est event.target par un nouveau bouton (validate)
     task.style.textDecoration = action ? "line-through" : "none";
-    if(!action){
-        const taskZone=task.parentElement;
-        task.detach().appendTo(taskZone);
+    if(action){
+        task.parentElement.append(task);
+    }else{
+        task.parentElement.prepend(task);
     }
-
+        
 }
