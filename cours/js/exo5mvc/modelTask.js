@@ -1,5 +1,6 @@
 /**
- * il gère les donné
+ *  @class
+ *  il gère les donné
  *  le payload sont les donné minimum nécessaire a l'interface + id
  *  ici c'est le nom de la tach son statut et sont id
  */
